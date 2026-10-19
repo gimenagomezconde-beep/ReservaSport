@@ -1,0 +1,14 @@
+
+{
+  "name": "reservasport-functions",
+  "description": "Autorización de nuevos administradores de ReservaSport",
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.0.0"
+  },
+  "private": true
+}

@@ -1,0 +1,141 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function conectado() {
+      return request.auth != null;
+    }
+
+    function esAdministrador() {
+      return conectado()
+        && exists(
+          /databases/$(database)/documents/usuarios/$(request.auth.uid)
+        )
+        && get(
+          /databases/$(database)/documents/usuarios/$(request.auth.uid)
+        ).data.rol == "administrador";
+    }
+
+    // UID del administrador principal de ReservaSport.
+    function esAdministradorPrincipal() {
+  return conectado()
+    && request.auth.uid == "31UICugjxzgwH3j5T517JsXbSFIX"
+    && esAdministrador();
+}
+
+    match /usuarios/{uid} {
+      allow create: if conectado()
+        && request.auth.uid == uid
+        && request.resource.data.rol == "usuario";
+
+      allow read: if conectado()
+        && (request.auth.uid == uid || esAdministrador());
+
+      allow update: if conectado()
+        && request.auth.uid == uid
+        && request.resource.data.rol == resource.data.rol
+        && request.resource.data.diff(resource.data)
+          .affectedKeys()
+          .hasOnly([
+            'nombre',
+            'email',
+            'telefono',
+            'actualizadoEn'
+          ]);
+
+      // El administrador principal puede aprobar una solicitud
+      // y cambiar el rol dentro de la misma operación por lotes.
+      allow update: if esAdministradorPrincipal()
+        && resource.data.rol == "usuario"
+        && request.resource.data.rol == "administrador"
+        && request.resource.data.diff(resource.data)
+          .affectedKeys()
+          .hasOnly(['rol'])
+        && exists(
+          /databases/$(database)/documents/solicitudes_admin/$(uid)
+        )
+        && getAfter(
+          /databases/$(database)/documents/solicitudes_admin/$(uid)
+        ).data.estado == "aprobada";
+
+      allow delete: if false;
+    }
+
+    match /reservas/{reservaId} {
+      allow create: if conectado()
+        && request.resource.data.usuarioId == request.auth.uid;
+
+      allow read: if conectado()
+        && (
+          resource.data.usuarioId == request.auth.uid
+          || esAdministrador()
+        );
+
+      allow update: if conectado()
+        && (
+          esAdministrador()
+          || (
+            resource.data.usuarioId == request.auth.uid
+            && request.resource.data.usuarioId == resource.data.usuarioId
+            && request.resource.data.diff(resource.data)
+              .affectedKeys()
+              .hasOnly(['estado'])
+          )
+        );
+
+      allow delete: if false;
+    }
+
+    match /solicitudes_admin/{uid} {
+      // Un usuario puede crear únicamente su propia solicitud.
+      allow create: if conectado()
+        && request.auth.uid == uid
+        && request.resource.data.estado == "pendiente"
+        && request.resource.data.uid == uid
+        && request.resource.data.keys().hasOnly([
+          'uid',
+          'nombre',
+          'email',
+          'estado',
+          'creadoEn'
+        ]);
+
+      // El solicitante y los administradores pueden leer solicitudes.
+      allow read: if conectado()
+        && (request.auth.uid == uid || esAdministrador());
+
+      // Solo el administrador principal puede resolver solicitudes.
+      allow update: if esAdministradorPrincipal()
+        && resource.data.estado == "pendiente"
+        && request.resource.data.estado in ["aprobada", "rechazada"]
+        && request.resource.data.diff(resource.data)
+          .affectedKeys()
+          .hasOnly([
+            'estado',
+            'revisadoPor',
+            'revisadoEn'
+          ])
+        && request.resource.data.revisadoPor == request.auth.uid
+        && request.resource.data.revisadoEn == request.time
+        && (
+          (
+            request.resource.data.estado == "aprobada"
+            && getAfter(
+              /databases/$(database)/documents/usuarios/$(uid)
+            ).data.rol == "administrador"
+          )
+          ||
+          (
+            request.resource.data.estado == "rechazada"
+            && getAfter(
+              /databases/$(database)/documents/usuarios/$(uid)
+            ).data.rol == "usuario"
+          )
+        );
+
+      allow delete: if false;
+    }
+  }
+}

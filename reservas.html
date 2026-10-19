@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis reservas | ReservaSport</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+        .reservas-contenedor {
+            width: min(900px, 92%);
+            margin: 35px auto;
+        }
+
+        .reservas-tarjeta {
+            background: #ffffff;
+            padding: 25px;
+            margin: 22px 0;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .deportes-reserva {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .deportes-reserva button {
+            padding: 14px;
+            border: 1px solid #d5dbe5;
+            border-radius: 9px;
+            background: #f7f9fc;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .deportes-reserva button.activo {
+            background: #e1f5e8;
+            border: 2px solid #16834a;
+            font-weight: bold;
+        }
+
+        .campo-reserva {
+            margin-bottom: 18px;
+        }
+
+        .campo-reserva label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .campo-reserva input,
+        .campo-reserva select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd3dd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .boton-reserva {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #16834a;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .boton-reserva:hover {
+            background: #106638;
+        }
+
+        .mensaje-reserva {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .mensaje-reserva.exito {
+            background: #e1f5e8;
+            color: #126334;
+        }
+
+        .mensaje-reserva.error {
+            background: #ffe8e8;
+            color: #a51e1e;
+        }
+
+        .reserva-guardada {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 12px 0;
+        }
+
+        .boton-cancelar {
+            margin-top: 8px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            background: #b42318;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ReservaSport</h1>
+        <p>¡Elige tu deporte y prepárate para jugar!</p>
+        <button type="button" id="cerrar-sesion">Cerrar sesión</button>
+    </header>
+    
+<div class="decoracion-deportiva">
+    <span class="icono-deporte balon-futbol">⚽</span>
+    <span class="icono-deporte balon-basquet">🏀</span>
+    <span class="icono-deporte balon-voley">🏐</span>
+    <span class="icono-deporte balon-tenis">🎾</span>
+</div>
+
+
+    <main class="reservas-contenedor">
+
+        <h2>Bienvenido a tus reservas</h2>
+        <p id="saludo">Cargando tus datos...</p>
+        
+<section class="reservas-tarjeta" id="seccion-solicitud-admin">
+    <h3>¿Quieres ser administrador?</h3>
+    <p>
+        Envía una solicitud para que el administrador principal
+        revise tu cuenta.
+    </p>
+
+    <button
+        type="button"
+        id="btn-solicitar-admin"
+        class="boton-reserva"
+    >
+        Solicitar ser administrador
+    </button>
+
+    <p
+        id="mensaje-solicitud-admin"
+        class="mensaje-reserva"
+        role="status"
+        aria-live="polite"
+    ></p>
+</section>
+
+
+        <section class="reservas-tarjeta">
+            <h3>1. Selecciona tu deporte</h3>
+
+            <div class="deportes-reserva">
+                <button type="button" data-deporte="Fútbol">⚽ Fútbol</button>
+                <button type="button" data-deporte="Vóley">🏐 Vóley</button>
+                <button type="button" data-deporte="Básquet">🏀 Básquet</button>
+                <button type="button" data-deporte="Fulbito">🥅 Fulbito</button>
+            </div>
+
+            <p id="deporte-seleccionado">
+                Selecciona el deporte que deseas practicar.
+            </p>
+        </section>
+
+        <section class="reservas-tarjeta">
+            <h3>2. Completa tu reserva</h3>
+
+            <form id="formulario-reserva">
+
+                <div class="campo-reserva">
+                    <label for="nombre-usuario">Nombre del usuario</label>
+                    <input type="text" id="nombre-usuario" readonly>
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="deporte">Deporte</label>
+                    <select id="deporte" required>
+                        <option value="">Selecciona un deporte</option>
+                        <option value="Fútbol">Fútbol</option>
+                        <option value="Vóley">Vóley</option>
+                        <option value="Básquet">Básquet</option>
+                        <option value="Fulbito">Fulbito</option>
+                    </select>
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="cancha">Cancha</label>
+                    <select id="cancha" required>
+                        <option value="">Selecciona una cancha</option>
+                        <option value="Cancha 1">Cancha 1</option>
+                        <option value="Cancha 2">Cancha 2</option>
+                        <option value="Cancha 3">Cancha 3</option>
+                    </select>
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="fecha">Fecha de reserva</label>
+                    <input type="date" id="fecha" required>
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="horario">Horario</label>
+                    <select id="horario" required>
+                        <option value="">Selecciona un horario</option>
+                        <option value="08:00 - 09:00">08:00 - 09:00</option>
+                        <option value="09:00 - 10:00">09:00 - 10:00</option>
+                        <option value="10:00 - 11:00">10:00 - 11:00</option>
+                        <option value="14:00 - 15:00">14:00 - 15:00</option>
+                        <option value="15:00 - 16:00">15:00 - 16:00</option>
+                        <option value="16:00 - 17:00">16:00 - 17:00</option>
+                        <option value="17:00 - 18:00">17:00 - 18:00</option>
+                        <option value="18:00 - 19:00">18:00 - 19:00</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="boton-reserva">
+                    Confirmar reserva
+                </button>
+
+                <p id="mensaje-reserva" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="reservas-tarjeta">
+            <h3>3. Mis reservas registradas</h3>
+            <div id="lista-reservas">
+                Todavía no tienes reservas registradas.
+            </div>
+        </section>
+
+<!-- Ticket de confirmación -->
+<section id="ticket-reserva" class="ticket-reserva" hidden>
+    <div class="ticket-cabecera">
+        <span class="ticket-icono">🎟️</span>
+        <h2>Reserva confirmada</h2>
+        <p>¡Prepárate para jugar!</p>
+    </div>
+
+    <div class="ticket-contenido">
+        <p class="ticket-etiqueta">CÓDIGO DE RESERVA</p>
+        <h3 id="ticket-codigo">RS-000001</h3>
+
+        <div class="ticket-dato">
+            <span>Usuario</span>
+            <strong id="ticket-usuario">-</strong>
+        </div>
+
+        <div class="ticket-dato">
+            <span>Deporte</span>
+            <strong id="ticket-deporte">-</strong>
+        </div>
+
+        <div class="ticket-dato">
+            <span>Cancha</span>
+            <strong id="ticket-cancha">-</strong>
+        </div>
+
+        <div class="ticket-dato">
+            <span>Fecha</span>
+            <strong id="ticket-fecha">-</strong>
+        </div>
+
+        <div class="ticket-dato">
+            <span>Horario</span>
+            <strong id="ticket-horario">-</strong>
+        </div>
+
+        <div class="ticket-estado">
+            ✓ RESERVA REGISTRADA
+        </div>
+
+        <button type="button" id="imprimir-ticket">
+            🖨️ Imprimir ticket
+        </button>
+    </div>
+</section>
+
+        <p>
+            <a href="index.html">Volver a la pantalla principal</a>
+        </p>
+
+        <p>
+            <small>
+                Versión de demostración: las reservas se guardan en este navegador,
+                no en Firebase. La disponibilidad de las canchas todavía no se verifica.
+            </small>
+            </p>
+
+    </main>
+
+    <div class="fondo-animado" aria-hidden="true">
+        <span class="burbuja"></span>
+        <span class="burbuja"></span>
+        <span class="burbuja"></span>
+        <span class="burbuja"></span>
+        <span class="burbuja"></span>
+        <span class="burbuja"></span>
+    </div>
+
+   <script type="module" src="auth.js"></script>
+    <script type="module" src="reservas.js"></script>
+
+</body>
+</html>
+
+       

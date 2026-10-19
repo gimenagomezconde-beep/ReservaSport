@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar administración | ReservaSport</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="auth-container">
+    <h1>Solicitar rol de administrador</h1>
+
+    <p>
+      Tu cuenta seguirá siendo de usuario hasta que el
+      administrador principal apruebe tu solicitud.
+    </p>
+
+    <p id="estado-sesion">Comprobando sesión...</p>
+
+    <button id="enviar-solicitud" type="button" disabled>
+      Enviar solicitud
+    </button>
+
+    <p id="mensaje" role="status" aria-live="polite"></p>
+
+    <a href="reservas.html">Volver a ReservaSport</a>
+  </main>
+
+  <script type="module" src="solicitar-admin.js"></script>
+</body>
+</html>

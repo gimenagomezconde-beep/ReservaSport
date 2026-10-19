@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar sesión | ReservaSport</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- Firebase necesita que auth.js sea un módulo -->
+    <script type="module" src="auth.js"></script>
+</head>
+
+<body class="auth-page">
+
+    <header class="navbar">
+        <a class="logo" href="index.html">
+            <span class="logo-icon">R</span>
+            <span>reserva<span class="logo-color">sport</span></span>
+        </a>
+
+        <a href="index.html" class="button button-light">
+            ← Volver al inicio
+        </a>
+    </header>
+
+    <main class="auth-layout">
+
+        <section class="auth-promo">
+            <span class="eyebrow">EL DEPORTE NOS UNE</span>
+
+            <h1>
+                Entra.<br>
+                Elige tu cancha.<br>
+                <span>¡A jugar!</span>
+            </h1>
+
+            <p>
+                Accede a tu espacio deportivo y prepárate
+                para tu próximo partido.
+            </p>
+
+            <div class="auth-emoji">🏆 ⚡ 🎾</div>
+        </section>
+
+        <section class="auth-card">
+            <span class="eyebrow">QUÉ BUENO VERTE</span>
+
+            <h2>¡Bienvenido!</h2>
+
+            <p class="auth-subtitle">
+                Inicia sesión para continuar.
+            </p>
+
+            <button
+                type="button"
+                class="google-button"
+                id="google-login"
+            >
+                <span class="google-g">G</span>
+                Continuar con Google
+            </button>
+
+            <div class="auth-separator">
+                <span>o ingresa con tu correo</span>
+            </div>
+
+            <form id="login-form">
+                <label for="email">Correo electrónico</label>
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="tucorreo@gmail.com"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="password">Contraseña</label>
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Tu contraseña"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button
+                    class="button button-orange auth-submit"
+                    type="submit"
+                >
+                    Iniciar sesión ↗
+                </button>
+            </form>
+
+            <div class="admin-note">
+                <strong>¿Eres administrador?</strong>
+
+                <p>
+                    Ingresa con la cuenta administrativa autorizada.
+                    Tu rol será verificado por el sistema.
+                </p>
+            </div>
+
+            <p class="auth-switch">
+                ¿Todavía no tienes cuenta?
+                <a href="registro.html">Regístrate aquí</a>
+            </p>
+
+            <p
+                id="auth-message"
+                class="auth-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+        </section>
+
+    </main>
+
+</body>
+</html>

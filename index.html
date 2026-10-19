@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff9f2">
+
+    <title>ReservaSport | Tu cancha, tu pasión</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+
+        <a class="logo" href="#inicio">
+            <span class="logo-icon">R</span>
+            <span>reserva<span class="logo-color">sport</span></span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#deportes">Deportes</a>
+            <a href="#como-funciona">Cómo funciona</a>
+        </nav>
+
+        <div class="navbar-actions">
+            <a class="button button-light" href="login.html">
+                Iniciar sesión
+            </a>
+
+            <a class="button button-dark" href="registro.html">
+                Crear mi cuenta ↗
+            </a>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- PANTALLA PRINCIPAL -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    <span class="dot"></span>
+                    LA PASIÓN SE JUEGA AQUÍ
+                </span>
+
+                <h1>
+                    Hoy se juega.<br>
+                    <span>¿Te apuntas?</span>
+                </h1>
+
+                <p>
+                    Encuentra tu cancha ideal, reúne a tu equipo
+                    y convierte cualquier día en un partidazo.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button button-orange" href="registro.html">
+                        Crear mi cuenta ↗
+                    </a>
+
+                    <a class="button button-light" href="login.html">
+                        Ya tengo una cuenta
+                    </a>
+                </div>
+
+                <div class="stats">
+                    <div>
+                        <strong>04</strong>
+                        <span>Deportes</span>
+                    </div>
+
+                    <div class="stat-line"></div>
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>Actitud</span>
+                    </div>
+
+                    <div class="stat-line"></div>
+
+                    <div>
+                        <strong>∞</strong>
+                        <span>Diversión</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1100&q=85"
+                    alt="Cancha deportiva iluminada"
+                >
+
+                <div class="floating-card">
+                    <span class="floating-emoji">⚽</span>
+
+                    <div>
+                        <strong>Tu equipo te espera</strong>
+                        <small>¡Es hora de jugar!</small>
+                    </div>
+                </div>
+
+                <span class="star star-one">✳</span>
+                <span class="star star-two">✦</span>
+
+            </div>
+
+        </section>
+
+        <!-- DEPORTES -->
+        <section class="sports section" id="deportes">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">ELIGE TU AVENTURA</span>
+                    <h2>¿Qué vamos a jugar? <span>🔥</span></h2>
+                    <p>Tu deporte favorito está a un clic de distancia.</p>
+                </div>
+
+                <span class="count">04 DEPORTES</span>
+            </div>
+
+            <div class="sports-grid">
+
+                <article class="sport-card orange-card">
+                    <div class="sport-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1459865264687-595d652de67e?auto=format&fit=crop&w=800&q=80"
+                            alt="Estadio de fútbol"
+                        >
+                        <span class="number">01</span>
+                    </div>
+
+                    <div class="sport-content">
+                        <span class="tag">EL REY DE LA CANCHA</span>
+                        <h3>Fútbol ⚽</h3>
+                        <p>Arma tu equipo y sal a ganar.</p>
+
+                        <button class="sport-button" data-sport="Fútbol" type="button">
+                            Elegir fútbol <span>↗</span>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="sport-card purple-card">
+                    <div class="sport-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=800&q=80"
+                            alt="Partido de vóley"
+                        >
+                        <span class="number">02</span>
+                    </div>
+
+                    <div class="sport-content">
+                        <span class="tag">UN EQUIPO, UNA PASIÓN</span>
+                        <h3>Vóley 🏐</h3>
+                        <p>¡Salta, remata y celebra!</p>
+
+                        <button class="sport-button" data-sport="Vóley" type="button">
+                            Elegir vóley <span>↗</span>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="sport-card green-card">
+                    <div class="sport-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=800&q=80"
+                            alt="Cancha de básquet"
+                        >
+                        <span class="number">03</span>
+                    </div>
+
+                    <div class="sport-content">
+                        <span class="tag">DOMINA EL JUEGO</span>
+                        <h3>Básquet 🏀</h3>
+                        <p>Encesta y supera tus límites.</p>
+
+                        <button class="sport-button" data-sport="Básquet" type="button">
+                            Elegir básquet <span>↗</span>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="sport-card yellow-card">
+                    <div class="sport-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80"
+                            alt="Partido de fulbito"
+                        >
+                        <span class="number">04</span>
+                    </div>
+
+                    <div class="sport-content">
+                        <span class="tag">PARTIDOS ENTRE AMIGOS</span>
+                        <h3>Fulbito ⚽</h3>
+                        <p>Junta a tu gente y empieza.</p>
+
+                        <button class="sport-button" data-sport="Fulbito" type="button">
+                            Elegir fulbito <span>↗</span>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+             <!-- CÓMO FUNCIONA -->
+        <section class="how section" id="como-funciona">
+
+            <span class="eyebrow">FÁCIL, RÁPIDO Y DIVERTIDO</span>
+
+            <h2>Tu partido en <span>3 pasos.</span></h2>
+
+            <div class="steps">
+                <article>
+                    <span>01</span>
+                    <h3>Elige tu deporte</h3>
+                    <p>Encuentra la cancha ideal para tu equipo.</p>
+                </article>
+
+                <article>
+                    <span>02</span>
+                    <h3>Escoge tu horario</h3>
+                    <p>Selecciona una fecha y una hora para jugar.</p>
+                </article>
+
+                <article>
+                    <span>03</span>
+                    <h3>¡A disfrutar!</h3>
+                    <p>Prepara a tu equipo y vive la pasión deportiva.</p>
+                </article>
+            </div>
+
+            <div class="final-banner">
+                <div>
+                    <span class="eyebrow">LA CANCHA TE ESPERA</span>
+                    <h2>Menos excusas. ¡Más deporte!</h2>
+                </div>
+
+                <a href="registro.html" class="button button-dark">
+                    Comenzar ahora ↗
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+
+        <a class="logo" href="#inicio">
+            <span class="logo-icon">R</span>
+            <span>reserva<span class="logo-color">sport</span></span>
+        </a>
+
+        <p>Hecho para quienes viven el deporte. 💥</p>
+
+        <span>© 2026 ReservaSport · Demostración visual</span>
+
+        <div class="footer-links">
+            <a href="login.html">Iniciar sesión</a>
+            <a href="registro.html">Crear mi cuenta</a>
+        </div>
+
+    </footer>
+
+    <!-- CONFIRMACIÓN VISUAL -->
+    <dialog id="confirmation" class="confirmation">
+
+        <button
+            type="button"
+            class="close-dialog"
+            id="close-dialog"
+            aria-label="Cerrar"
+        >×</button>
+
+        <div class="success-icon">✓</div>
+
+        <span class="eyebrow">DEMO COMPLETADA</span>
+
+        <h2>¡Buen partido!</h2>
+
+        <p>Así se vería el resumen de tu reserva:</p>
+
+        <div id="booking-summary" class="booking-summary"></div>
+
+        <p class="demo-note">
+            Esto es una simulación. No se guardó una reserva real.
+        </p>
+
+        <button
+            type="button"
+            id="finish-dialog"
+            class="button button-orange submit-button"
+        >
+            ¡Entendido!
+        </button>
+
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+</body>
+
+<div class="fondo-animado" aria-hidden="true">
+    <span class="burbuja"></span>
+    <span class="burbuja"></span>
+    <span class="burbuja"></span>
+    <span class="burbuja"></span>
+    <span class="burbuja"></span>
+    <span class="burbuja"></span>
+</div>
+
+</html>

@@ -1,0 +1,12 @@
+
+node_modules/
+*.local
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.env
+.env.*
+!.env.example
+firebase-prueba.html
+probar-reglas.js

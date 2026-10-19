@@ -1,0 +1,2085 @@
+
+:root {
+    --bg: #fff9f2;
+    --ink: #24231f;
+    --orange: #ff593d;
+    --purple: #7955e8;
+    --green: #c9f45b;
+    --yellow: #ffcf45;
+    --muted: #77736c;
+    --line: #eee6db;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Nunito", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navbar {
+    min-height: 80px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(255, 249, 242, .96);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 23px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--orange);
+    color: white;
+    transform: rotate(-5deg);
+}
+
+.logo-color {
+    color: var(--orange);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 27px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.navbar nav a:hover {
+    color: var(--orange);
+}
+
+.button {
+    border: 0;
+    border-radius: 13px;
+    padding: 14px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px #24231f1b;
+}
+
+.button-dark {
+    background: var(--ink);
+    color: white;
+}
+
+.button-orange {
+    background: var(--orange);
+    color: white;
+}
+
+.button-light {
+    border: 1px solid #e2d9cd;
+    background: transparent;
+}
+
+.hero {
+    padding: 78px 7% 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+    overflow: hidden;
+}
+
+.eyebrow {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #30b979;
+    margin-right: 7px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 5.4vw, 76px);
+    line-height: 1.06;
+    letter-spacing: -3px;
+    font-weight: 900;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero-copy > p {
+    max-width: 470px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 29px;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 43px;
+}
+
+.stats div:not(.stat-line) {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats strong {
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.stats span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stat-line {
+    height: 36px;
+    width: 1px;
+    background: #ded6cb;
+}
+
+.hero-photo {
+    position: relative;
+    min-width: 0;
+}
+
+.hero-photo > img {
+    display: block;
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 15px 15px 0 var(--green);
+}
+
+.floating-card {
+    position: absolute;
+    bottom: 28px;
+    left: -25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 18px;
+    background: white;
+    border-radius: 17px;
+    box-shadow: 0 10px 35px #0000001c;
+}
+
+.floating-emoji {
+    font-size: 29px;
+}
+
+.floating-card strong, .floating-card small {
+    display: block;
+}
+
+.floating-card strong {
+    font-size: 13px;
+}
+
+.floating-card small {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.star {
+    position: absolute;
+    color: var(--orange);
+    font-size: 45px;
+}
+
+.star-one {
+    right: 5px;
+    top: -30px;
+}
+
+.star-two {
+    left: 10px;
+    top: -23px;
+    color: var(--purple);
+}
+
+.section {
+    padding: 82px 7%;
+}
+
+.sports {
+    background: white;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 34px;
+}
+
+.section-heading h2, .how > h2 {
+    margin-top: 12px;
+    font-size: clamp(29px, 3.5vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    font-weight: 900;
+}
+
+.section-heading p {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+.count {
+    padding: 10px 15px;
+    border-radius: 30px;
+    background: #fff0e8;
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.sport-card {
+    border: 1px solid var(--line);
+    border-radius: 21px;
+    overflow: hidden;
+    background: white;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.sport-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 35px #24231f14;
+}
+
+.sport-image {
+    height: 175px;
+    position: relative;
+    overflow: hidden;
+    background: #ece7df;
+}
+
+.sport-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s;
+}
+
+.sport-card:hover img {
+    transform: scale(1.06);
+}
+
+.number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: white;
+    border-radius: 9px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.sport-content {
+    padding: 20px;
+}
+
+.tag {
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+.orange-card .tag, .orange-card .sport-button {
+    color: var(--orange);
+}
+
+.purple-card .tag, .purple-card .sport-button {
+    color: var(--purple);
+}
+
+.green-card .tag, .green-card .sport-button {
+    color: #158a65;
+}
+
+.yellow-card .tag, .yellow-card .sport-button {
+    color: #9a7200;
+}
+
+.sport-content h3 {
+    font-size: 25px;
+    font-weight: 900;
+    margin: 8px 0;
+}
+
+.sport-content p {
+    min-height: 42px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.sport-button {
+    border: 0;
+    padding: 0;
+    margin-top: 16px;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.sport-button span {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform .2s;
+}
+
+.sport-button:hover span {
+    transform: translate(4px, -3px);
+}
+
+.booking-section {
+    display: grid;
+    grid-template-columns: .8fr 1fr;
+    align-items: center;
+    gap: 70px;
+    background: #f1edff;
+}
+
+.booking-intro h2 {
+    font-size: clamp(42px, 5vw, 65px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin: 22px 0;
+    font-weight: 900;
+}
+
+.booking-intro h2 span {
+    color: var(--purple);
+}
+
+.booking-intro > p {
+    color: var(--muted);
+    line-height: 1.9;
+    max-width: 360px;
+}
+
+.booking-decoration {
+    font-size: 110px;
+    margin-top: 30px;
+    transform: rotate(-10deg);
+}
+
+.booking-form {
+    padding: 32px;
+    background: white;
+    border: 1px solid #e9e0ff;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px #7955e814;
+}
+
+.booking-form h3 {
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.booking-form h3 span {
+    color: var(--orange);
+}
+
+.form-description {
+    margin: 6px 0 25px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.booking-form label {
+    display: block;
+    margin: 17px 0 7px;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.booking-form input, .booking-form select {
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+    border: 1px solid #e5dfd7;
+    border-radius: 11px;
+    background: #fffdfb;
+    color: var(--ink);
+    outline: none;
+}
+
+.booking-form input:focus, .booking-form select:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px #7955e81c;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 23px;
+}
+
+.demo-note {
+    margin-top: 15px;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--muted);
+    text-align: center;
+}
+
+.how {
+    text-align: center;
+}
+
+.how > h2 span {
+    color: var(--purple);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    text-align: left;
+    margin-top: 38px;
+}
+
+.steps article {
+    padding: 27px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: white;
+}
+
+.steps article > span {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: var(--yellow);
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.steps article:nth-child(2) > span {
+    background: #e4dbff;
+}
+
+.steps article:nth-child(3) > span {
+    background: #e4f8ba;
+}
+
+.steps h3 {
+    font-size: 19px;
+    margin-bottom: 9px;
+}
+
+.steps p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.final-banner {
+    margin-top: 55px;
+    padding: 35px;
+    border-radius: 23px;
+    background: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.final-banner h2 {
+    font-size: clamp(23px, 3vw, 34px);
+    margin-top: 10px;
+    font-weight: 900;
+}
+
+.footer {
+    padding: 27px 7%;
+    background: white;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer p, .footer > span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.confirmation {
+    width: min(440px, calc(100% - 30px));
+    max-height: 85vh;
+    overflow-y: auto;
+    margin: auto;
+    padding: 32px;
+    border: 0;
+    border-radius: 24px;
+    color: var(--ink);
+    text-align: center;
+    box-shadow: 0 20px 80px #00000035;
+}
+
+.confirmation::backdrop {
+    background: #19151f99;
+    backdrop-filter: blur(4px);
+}
+
+.close-dialog {
+    display: block;
+    margin-left: auto;
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.success-icon {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e4f8ba;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.confirmation h2 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.confirmation > p:not(.demo-note) {
+    color: var(--muted);
+    margin: 12px 0;
+}
+
+.booking-summary {
+    padding: 18px;
+    border-radius: 14px;
+    background: #fff7ed;
+    text-align: left;
+    font-size: 14px;
+    line-height: 2;
+    overflow-wrap: anywhere;
+}
+
+.toast {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    padding: 13px 20px;
+    border-radius: 12px;
+    background: var(--ink);
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: .25s;
+    z-index: 30;
+    width: max-content;
+    max-width: calc(100% - 30px);
+    font-size: 13px;
+}
+
+.toast.visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+@media (max-width: 1100px) {
+    .sports-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        gap: 35px;
+    }
+
+    .booking-section {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 720px) {
+    .navbar {
+        padding: 14px 5%;
+        flex-wrap: wrap;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+        font-size: 12px;
+    }
+
+    .navbar > .button {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 52px 6% 65px;
+        gap: 45px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-photo > img {
+        height: 320px;
+    }
+
+    .floating-card {
+        left: -5px;
+        bottom: 15px;
+    }
+
+    .section {
+        padding: 60px 6%;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .sports-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sport-image {
+        height: 220px;
+    }
+
+    .booking-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .booking-decoration {
+        font-size: 70px;
+        margin-top: 10px;
+    }
+
+    .booking-form {
+        padding: 23px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .final-banner {
+        padding: 27px;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+
+/* ===== PANTALLAS DE REGISTRO E INICIO DE SESIÓN ===== */
+
+.auth-page {
+    min-height: 100vh;
+}
+
+.auth-layout {
+    width: min(1120px, 90%);
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.auth-promo {
+    padding: 35px 0;
+}
+
+.auth-promo h1 {
+    margin: 24px 0;
+    font-size: clamp(44px, 5vw, 70px);
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+    font-weight: 900;
+}
+
+.auth-promo h1 span {
+    color: var(--orange);
+}
+
+.auth-promo > p {
+    max-width: 390px;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.auth-emoji {
+    margin-top: 30px;
+    font-size: 42px;
+    letter-spacing: 9px;
+}
+
+.auth-card {
+    background: white;
+    padding: 35px;
+    border: 1px solid var(--line);
+    border-radius: 25px;
+    box-shadow: 0 15px 45px #24231f0c;
+}
+
+.auth-card h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 12px;
+}
+
+.auth-subtitle {
+    margin: 7px 0 23px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 13px;
+    background: white;
+    border: 1px solid #dedbd5;
+    border-radius: 12px;
+    color: var(--ink);
+    font-weight: 800;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+.google-button:hover {
+    background: #faf8f4;
+    transform: translateY(-2px);
+}
+
+.google-g {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #4285f4;
+}
+
+.auth-separator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 23px 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.auth-separator::before,
+.auth-separator::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--line);
+}
+
+.auth-card label {
+    display: block;
+    margin: 15px 0 7px;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e5dfd7;
+    border-radius: 11px;
+    outline: none;
+    background: #fffdfb;
+}
+
+.auth-card input:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px #7955e81c;
+}
+
+.auth-submit {
+    width: 100%;
+    margin-top: 23px;
+}
+
+.auth-legal {
+    margin-top: 17px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.auth-switch {
+    margin-top: 22px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: var(--orange);
+    font-weight: 900;
+}
+
+.auth-message {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.auth-message.error {
+    color: #c5362b;
+}
+
+.auth-message.success {
+    color: #198754;
+}
+
+.admin-note {
+    padding: 15px;
+    margin-top: 22px;
+    background: #f1edff;
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.admin-note p {
+    margin-top: 5px;
+    color: var(--muted);
+}
+
+@media (max-width: 760px) {
+    .auth-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 25px auto 45px;
+    }
+
+    .auth-promo {
+        padding: 20px 0 0;
+    }
+
+    .auth-promo h1 {
+        font-size: 46px;
+    }
+
+    .auth-emoji {
+        font-size: 32px;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+}
+
+/* =========================================
+   RESERVASPORT - COLORES DE INDEX
+========================================= */
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+}
+
+/* Cabecera */
+header {
+    background: var(--ink);
+    color: white;
+}
+
+header p {
+    color: #eee6db;
+}
+
+/* Botones principales */
+.button-orange,
+.button-dark,
+.button-green,
+.sport-card button,
+.deporte-card button,
+.auth-container button {
+    background: var(--orange);
+    color: white;
+}
+
+.button-orange:hover,
+.button-dark:hover,
+.button-green:hover,
+.sport-card button:hover,
+.deporte-card button:hover,
+.auth-container button:hover {
+    background: #e84830;
+}
+
+/* Títulos */
+main h2,
+.reservas-tarjeta h3,
+.sport-card h3,
+.deporte-card h3,
+.auth-container h2 {
+    color: var(--ink);
+}
+
+/* Fondo de las tarjetas */
+.reservas-tarjeta,
+.reserva-guardada,
+.auth-container {
+    background: white;
+    border-color: var(--line);
+    box-shadow: 0 8px 25px #24231f0c;
+}
+
+/* Selección de deportes */
+.deportes-reserva button {
+    background: #fff9f2;
+    border-color: var(--line);
+}
+
+.deportes-reserva button:hover,
+.deportes-reserva button.activo {
+    background: #fff0e8;
+    border-color: var(--orange);
+    color: var(--ink);
+}
+
+/* Deporte seleccionado */
+#deporte-seleccionado {
+    background: #fff0e8;
+    border-left-color: var(--orange);
+    color: var(--ink);
+}
+
+/* Campos del formulario */
+.campo-reserva input:focus,
+.campo-reserva select:focus,
+.auth-container input:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px #7955e81c;
+}
+
+/* Botón para confirmar reserva */
+.boton-reserva {
+    background: var(--orange);
+}
+
+.boton-reserva:hover {
+    background: #e84830;
+}
+
+/* Detalles decorativos */
+.reserva-guardada {
+    border-left-color: var(--orange);
+}
+
+/* Pie de página */
+footer {
+    background: var(--ink);
+    color: white;
+}
+
+/* Mensajes */
+.mensaje-reserva.exito {
+    background: #e4f8ba;
+    color: #24231f;
+    border-color: #c9f45b;
+}
+
+/* =========================================
+   CABECERA DE RESERVASPORT
+   Colores iguales a index.html
+========================================= */
+
+header {
+    background: var(--bg, #fff9f2);
+    color: var(--ink, #24231f);
+    padding: 28px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--line, #eee6db);
+    box-shadow: none;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--ink, #24231f);
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+header p {
+    margin: 8px 0 0;
+    color: var(--muted, #77736c);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+#cerrar-sesion {
+    background: var(--orange, #ff593d);
+    color: #ffffff;
+    border: none;
+    border-radius: 13px;
+    padding: 13px 20px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#cerrar-sesion:hover {
+    background: #e84830;
+    transform: translateY(-2px);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 650px) {
+    header {
+        padding: 22px 6%;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    #cerrar-sesion {
+        width: 100%;
+    }
+}
+/* ==========================================
+   ANIMACIONES DE RESERVASPORT
+   ========================================== */
+
+/* Aparición suave de toda la página */
+body {
+    animation: aparecerPagina 0.8s ease-out;
+}
+
+@keyframes aparecerPagina {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cabecera animada */
+header {
+    animation: bajarCabecera 0.7s ease-out;
+}
+
+@keyframes bajarCabecera {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título con efecto suave */
+header h1 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header h1:hover {
+    color: var(--orange, #ff593d);
+    transform: scale(1.03);
+}
+
+/* Botones con movimiento */
+button,
+.btn,
+#cerrar-sesion {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+button:hover,
+.btn:hover,
+#cerrar-sesion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px #24231f20;
+}
+
+button:active,
+.btn:active,
+#cerrar-sesion:active {
+    transform: scale(0.96);
+}
+
+/* Tarjetas de deportes y reservas */
+.card,
+.tarjeta,
+.deporte-card,
+.reserva-card,
+.reserva-item {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover,
+.tarjeta:hover,
+.deporte-card:hover,
+.reserva-card:hover,
+.reserva-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px #24231f18;
+    border-color: var(--orange, #ff593d);
+}
+
+/* Formularios con efecto al seleccionar */
+input,
+select,
+textarea {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--purple, #7955e8);
+    box-shadow: 0 0 0 4px #7955e825;
+}
+
+/* Efecto al entrar las secciones */
+section,
+main {
+    animation: subirSeccion 0.7s ease-out both;
+}
+
+@keyframes subirSeccion {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Línea decorativa en los títulos */
+h2 {
+    text-decoration-color: var(--orange, #ff593d);
+    text-underline-offset: 7px;
+    transition: color 0.3s ease;
+}
+
+h2:hover {
+    color: var(--purple, #7955e8);
+}
+
+/* Animaciones desactivadas si el usuario
+   prefiere reducir el movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+/* ==================================
+   DIBUJOS DEPORTIVOS ANIMADOS
+   RESERVASPORT
+================================== */
+
+/* Decoración deportiva */
+.decoracion-deportiva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Cada dibujo deportivo */
+.icono-deporte {
+    display: inline-block;
+    font-size: 45px;
+    cursor: pointer;
+    animation: flotar 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+/* Movimiento de flotación */
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+/* Efecto al pasar el cursor */
+.icono-deporte:hover {
+    transform: scale(1.35) rotate(15deg);
+}
+
+/* Animación especial para el balón */
+.balon-futbol {
+    animation-delay: 0s;
+}
+
+.balon-basquet {
+    animation-delay: 0.4s;
+}
+
+.balon-voley {
+    animation-delay: 0.8s;
+}
+
+.balon-tenis {
+    animation-delay: 1.2s;
+}
+
+/* Efecto decorativo para títulos */
+h1, h2 {
+    transition: color 0.3s ease;
+}
+
+h1:hover, h2:hover {
+    color: var(--orange, #ff593d);
+}
+
+/* Movimiento suave de tarjetas */
+.card:hover,
+.tarjeta:hover,
+.deporte-card:hover {
+    transform: translateY(-7px) rotate(1deg);
+    box-shadow: 0 14px 28px #24231f20;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    .icono-deporte {
+        font-size: 35px;
+    }
+
+    .decoracion-deportiva {
+        gap: 15px;
+    }
+}
+
+/* ======================================
+   DIBUJOS ANIMADOS DE RESERVASPORT
+====================================== */
+
+.decoracion-deportiva {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin: 25px auto;
+    padding: 18px;
+}
+
+/* Pelotas deportivas */
+.icono-deporte {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 85px;
+    font-size: 48px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 8px 20px #24231f12;
+    cursor: pointer;
+    animation: pelotaFlotante 3s ease-in-out infinite;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Cada pelota se mueve en un momento diferente */
+.balon-futbol {
+    border: 3px solid #c9f45b;
+    animation-delay: 0s;
+}
+
+.balon-basquet {
+    border: 3px solid #ff593d;
+    animation-delay: 0.4s;
+}
+
+.balon-voley {
+    border: 3px solid #7955e8;
+    animation-delay: 0.8s;
+}
+
+.balon-tenis {
+    border: 3px solid #ffcf45;
+    animation-delay: 1.2s;
+}
+
+/* Flotación y giro */
+@keyframes pelotaFlotante {
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(12deg);
+    }
+}
+
+/* Efecto al pasar el mouse */
+.icono-deporte:hover {
+    animation-play-state: paused;
+    transform: scale(1.2) rotate(15deg);
+    background: #fff9f2;
+    box-shadow: 0 12px 28px #24231f25;
+}
+
+/* Tarjetas de reservas */
+.reservas-tarjeta {
+    border: 1px solid #eee6db;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reservas-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px #24231f12;
+}
+
+/* Botones deportivos */
+.deportes-reserva button {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.deportes-reserva button:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 7px 15px #24231f15;
+}
+
+/* Botón de confirmar */
+.boton-reserva {
+    background: #ff593d;
+    border-radius: 13px;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.boton-reserva:hover {
+    background: #e84830;
+    transform: translateY(-3px);
+}
+
+/* Campos del formulario */
+.campo-reserva input:focus,
+.campo-reserva select:focus {
+    outline: none;
+    border-color: #7955e8;
+    box-shadow: 0 0 0 4px #7955e825;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .decoracion-deportiva {
+        gap: 16px;
+    }
+
+    .icono-deporte {
+        width: 65px;
+        height: 65px;
+        font-size: 36px;
+    }
+}
+
+/* Respetar la preferencia de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .icono-deporte {
+        animation: none;
+    }
+
+    .reservas-tarjeta,
+    .deportes-reserva button,
+    .boton-reserva {
+        transition: none;
+    }
+}
+
+/* =========================================
+   FONDO ANIMADO CON BURBUJAS DE COLORES
+========================================= */
+
+body {
+    position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
+    background: #fff9f2;
+}
+
+/* Capa de burbujas detrás de la página */
+.fondo-animado {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Burbujas */
+.burbuja {
+    position: absolute;
+    display: block;
+    bottom: -150px;
+    border-radius: 50%;
+    opacity: 0.45;
+    animation: burbujaSube linear infinite;
+}
+
+/* Colores */
+.burbuja:nth-child(1) {
+    left: 8%;
+    width: 55px;
+    height: 55px;
+    background: #ff593d;
+    animation-duration: 15s;
+}
+
+.burbuja:nth-child(2) {
+    left: 25%;
+    width: 85px;
+    height: 85px;
+    background: #7955e8;
+    animation-duration: 19s;
+    animation-delay: 2s;
+}
+
+.burbuja:nth-child(3) {
+    left: 45%;
+    width: 40px;
+    height: 40px;
+    background: #c9f45b;
+    animation-duration: 13s;
+    animation-delay: 4s;
+}
+
+.burbuja:nth-child(4) {
+    left: 65%;
+    width: 70px;
+    height: 70px;
+    background: #ffcf45;
+    animation-duration: 17s;
+    animation-delay: 1s;
+}
+
+.burbuja:nth-child(5) {
+    left: 82%;
+    width: 100px;
+    height: 100px;
+    background: #ff593d;
+    animation-duration: 21s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(6) {
+    left: 92%;
+    width: 35px;
+    height: 35px;
+    background: #7955e8;
+    animation-duration: 12s;
+    animation-delay: 3s;
+}
+
+/* Subida y desplazamiento */
+@keyframes burbujaSube {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translate(-45px, -50vh) rotate(160deg) scale(1.1);
+    }
+
+    85% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translate(35px, -115vh) rotate(320deg) scale(0.9);
+        opacity: 0;
+    }
+}
+
+/* Mantener las tarjetas legibles */
+.reservas-tarjeta {
+    background: rgba(255, 255, 255, 0.94);
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .burbuja {
+        animation: none;
+        display: none;
+    }
+}
+
+/* ======================================
+   BURBUJAS ANIMADAS - PÁGINA PRINCIPAL
+====================================== */
+
+.fondo-animado {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.burbuja {
+    position: absolute;
+    display: block;
+    bottom: -120px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: burbujasPrincipal 16s linear infinite;
+}
+
+/* Colores y tamaños de las burbujas */
+.fondo-animado .burbuja:nth-child(1) {
+    left: 5%;
+    width: 45px;
+    height: 45px;
+    background: #ff593d;
+    animation-delay: 0s;
+}
+
+.fondo-animado .burbuja:nth-child(2) {
+    left: 22%;
+    width: 75px;
+    height: 75px;
+    background: #7955e8;
+    animation-delay: 3s;
+}
+
+.fondo-animado .burbuja:nth-child(3) {
+    left: 43%;
+    width: 35px;
+    height: 35px;
+    background: #c9f45b;
+    animation-delay: 6s;
+}
+
+.fondo-animado .burbuja:nth-child(4) {
+    left: 63%;
+    width: 65px;
+    height: 65px;
+    background: #ffcf45;
+    animation-delay: 2s;
+}
+
+.fondo-animado .burbuja:nth-child(5) {
+    left: 80%;
+    width: 90px;
+    height: 90px;
+    background: #ff593d;
+    animation-delay: 5s;
+}
+
+.fondo-animado .burbuja:nth-child(6) {
+    left: 93%;
+    width: 40px;
+    height: 40px;
+    background: #7955e8;
+    animation-delay: 8s;
+}
+
+@keyframes burbujasPrincipal {
+    0% {
+        transform: translate(0, 0) scale(.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .3;
+    }
+
+    50% {
+        transform: translate(-35px, -55vh) scale(1.1);
+        opacity: .25;
+    }
+
+    85% {
+        opacity: .2;
+    }
+
+    100% {
+        transform: translate(40px, -120vh) scale(.8);
+        opacity: 0;
+    }
+}
+
+/* El contenido principal queda por delante */
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+body > *:not(.fondo-animado) {
+    position: relative;
+    z-index: 1;
+}
+
+/* No animar si se prefiere movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .fondo-animado {
+        display: none;
+    }
+}
+
+/* ==================================
+   TICKET DE RESERVASPORT
+================================== */
+
+.ticket-reserva {
+    width: min(420px, 92%);
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 15px 40px #24231f20;
+    border: 1px solid #eee6db;
+    animation: aparecerTicket 0.6s ease-out;
+}
+
+.ticket-reserva[hidden] {
+    display: none;
+}
+
+.ticket-cabecera {
+    padding: 28px 20px;
+    text-align: center;
+    background: #ff593d;
+    color: white;
+}
+
+.ticket-icono {
+    font-size: 48px;
+    display: inline-block;
+    animation: moverTicket 2s ease-in-out infinite;
+}
+
+.ticket-cabecera h2 {
+    margin: 10px 0;
+    color: white;
+}
+
+.ticket-cabecera p {
+    margin: 0;
+}
+
+.ticket-contenido {
+    padding: 25px;
+}
+
+.ticket-etiqueta {
+    color: #77736c;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#ticket-codigo {
+    text-align: center;
+    color: #7955e8;
+    font-size: 26px;
+    margin: 8px 0 22px;
+}
+
+.ticket-dato {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px dashed #eee6db;
+}
+
+.ticket-dato span {
+    color: #77736c;
+}
+
+.ticket-dato strong {
+    color: #24231f;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.ticket-estado {
+    margin-top: 22px;
+    padding: 13px;
+    border-radius: 12px;
+    background: #c9f45b;
+    color: #24231f;
+    text-align: center;
+    font-weight: 900;
+    font-size: 13px;
+}
+
+#imprimir-ticket {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #7955e8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+#imprimir-ticket:hover {
+    background: #6240cf;
+    transform: translateY(-2px);
+}
+
+@keyframes aparecerTicket {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes moverTicket {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg) translateY(-4px);
+    }
+}
+
+/* Diseño al imprimir */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #ticket-reserva,
+    #ticket-reserva * {
+        visibility: visible;
+    }
+
+    #ticket-reserva {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid #ccc;
+        animation: none;
+    }
+
+    #imprimir-ticket {
+        display: none;
+    }
+}
+
+/* =================================
+   TICKET DE CONFIRMACIÓN
+================================= */
+
+.ticket-reserva {
+    width: min(420px, 92%);
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 15px 40px #24231f20;
+    border: 1px solid #eee6db;
+    animation: aparecerTicket 0.6s ease-out;
+}
+
+.ticket-reserva[hidden] {
+    display: none !important;
+}
+
+.ticket-cabecera {
+    padding: 28px 20px;
+    text-align: center;
+    background: #ff593d;
+    color: white;
+}
+
+.ticket-icono {
+    display: inline-block;
+    font-size: 48px;
+    animation: moverTicket 2s ease-in-out infinite;
+}
+
+.ticket-cabecera h2 {
+    margin: 10px 0;
+    color: white;
+}
+
+.ticket-cabecera p {
+    margin: 0;
+}
+
+.ticket-contenido {
+    padding: 25px;
+}
+
+.ticket-etiqueta {
+    color: #77736c;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#ticket-codigo {
+    text-align: center;
+    color: #7955e8;
+    font-size: 26px;
+    margin: 8px 0 22px;
+}
+
+.ticket-dato {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px dashed #eee6db;
+}
+
+.ticket-dato span {
+    color: #77736c;
+}
+
+.ticket-dato strong {
+    color: #24231f;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.ticket-estado {
+    margin-top: 22px;
+    padding: 13px;
+    border-radius: 12px;
+    background: #c9f45b;
+    color: #24231f;
+    text-align: center;
+    font-weight: 900;
+    font-size: 13px;
+}
+
+#imprimir-ticket {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #7955e8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#imprimir-ticket:hover {
+    background: #6240cf;
+}
+
+@keyframes aparecerTicket {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes moverTicket {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg) translateY(-4px);
+    }
+}
+
+/* Imprimir solo el ticket */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #ticket-reserva,
+    #ticket-reserva * {
+        visibility: visible;
+    }
+
+    #ticket-reserva {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: 420px;
+        margin: 0;
+        box-shadow: none;
+        animation: none;
+    }
+
+    #imprimir-ticket {
+        display: none !important;
+    }
+}
